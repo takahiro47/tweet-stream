@@ -1,8 +1,5 @@
 .PHONY: dev run build test
 
-dev:
-	pm2 start processes/development.json
-
 run:
 	pm2 start processes/production.json
 
