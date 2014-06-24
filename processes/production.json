@@ -1,6 +1,5 @@
 [{
   "name"        : "tweet-stream",
-  "cwd"         : "/private/var/www/twitter/tweet_stream",
   "script"      : "./app.coffee",
   "port"        : 4000,
   "ignoreWatch" : [
@@ -10,7 +9,7 @@
       "logs",
       "node_modules"
   ],
-  "instances"   : "2",
+  "instances"   : "1",
   "watch"       : "true",
   "exec_mode"   : "cluster_mode",
   "env": {
