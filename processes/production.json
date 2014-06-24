@@ -1,0 +1,23 @@
+[{
+  "name"        : "tweet-stream",
+  "cwd"         : "/private/var/www/twitter/tweet_stream",
+  "script"      : "./app.coffee",
+  "port"        : 4000,
+  "ignoreWatch" : [
+      "assets",
+      "client",
+      "dist",
+      "logs",
+      "node_modules"
+  ],
+  "instances"   : "2",
+  "watch"       : "true",
+  "exec_mode"   : "cluster_mode",
+  "env": {
+      "NODE_ENV": "production",
+      "PORT": 4000
+  },
+  "error_file"  : "./logs/production-err.log",
+  "out_file"    : "./logs/production-out.log",
+  "pid_file"    : "./logs/production.pid"
+}]

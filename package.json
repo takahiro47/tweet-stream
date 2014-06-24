@@ -1,0 +1,22 @@
+{
+  "name": "tweet-stream",
+  "version": "0.0.3",
+  "private": true,
+  "scripts": {
+    "prestart": "grunt build",
+    "start": "coffee ./app.coffee",
+    "test": "mocha --reporter nyan --compilers coffee:coffee-script --check-leaks --slow 20 tests"
+  },
+  "dependencies": {
+    "colors": "^0.6.2",
+    "connect-mongo": "^0.4.1",
+    "mongodb": "^1.4.7",
+    "mongoose": "^3.8.12",
+    "ntwitter": "^0.5.0",
+    "path": "^0.4.9",
+    "seq": "^0.3.5",
+    "socket.io": "^1.0.6",
+    "underscore": "^1.6.0",
+    "util": "^0.10.3"
+  }
+}
