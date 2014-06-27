@@ -4,6 +4,11 @@ tweet-stream
 全世界のツイートをリアルタイムに保存してごにょごにょするスクリプト
 
 
+## Feature
+
+* 初期設定では日本でつぶやかれた位置情報つきツイートのStreamを取得し，保存します
+* 含まれる文字列で検索するには，app.coffee 内の `# 'track': tracks` のコメントアウトを外してください
+
 ## Quick start
 
 First of all, DON’T PANIC. It will take 5 minutes to get the gist of what this script is all about.
@@ -40,38 +45,31 @@ Hello world.
 $ coffee ./app.coffee
 
   --- Connect successful ---
-  @2Dbot 平面ロボ ちんぽ！ちんぽ！ちんぽ！ちんぽちんぽちんぽ！ちんぽイグゥゥゥ！！！！おちんぽイグゥゥゥゥウウゥウ！！！！！！ちんぽちんぽちんぽちんぽちんぽちんぽ！ちんぽ！
-  @katapeee 異性から見る手紙の魅力を感じる部位ランク
-  【髪型】AAA
-  【顔】C
-  【腕】B
-  【手】A
-  【胸】F
-  【腰】C
-  【太腿】E
-  【膝】F
-  【足首】AA
-  以上の結果でした。
-  #shindanmaker http://t.co/Ev1D5dJrbk
-  髪型そんなにいいんすか…
-  @morizoooou がんばって育てたじょんそんが...
-  ＿人人人人人＿
-  ＞ 突然の留年 ＜
-  ￣Y^Y^Y^Y^Y￣
-  主な原因: 不明
-  単位数：40　※全て選択B
-  最後の言葉 :『余裕』
-  #生きろ大学生 http://t.co/e2a8dERMjT
-  余裕。
-
+  @high4_01_17 終末ヒロイン
+  @HandsNet ＼おハンズございます／ 今日も1日よろしくお願いします。
+  @kuji らむれ狩られるそうです
+  @iris_sfc 紅茶のみたい珈琲胃にくる(´つヮ⊂)
+  @sussaa_sfc 地下のファミマでぼったくられそうになった、パンとお茶で400円て、、
+  @tako0846 原稿を書く時間が確実に減ってるやばい
+  @gizmodejapan 【最新記事】 Androidのアクティブユーザー数、月10億人を突破 http://t.co/HhulkQJeDv
+  ... (streaming)  
 
 # Run as a production daemon.
 
 $ pm2 start processes/production.json
 
+  { online: true, success: true, pid: 37877, pm2_version: '0.9.1' }
+  Process launched
+  ┌──────────────┬────┬─────────┬───────┬────────┬───────────┬────────┬─────────────┬───────────┐
+  │ App name     │ id │ mode    │ PID   │ status │ restarted │ uptime │      memory │  watching │
+  ├──────────────┼────┼─────────┼───────┼────────┼───────────┼────────┼─────────────┼───────────┤
+  │ tweet-stream │ 0  │ cluster │ 37878 │ online │         0 │ 0s     │ 26.570 MB   │ activated │
+  └──────────────┴────┴─────────┴───────┴────────┴───────────┴────────┴─────────────┴───────────┘
+
 # Then you can see the daemon status.
 
 $ pm2 status
+
 $ pm2 logs
 
 ```
