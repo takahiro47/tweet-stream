@@ -82,7 +82,8 @@ app = module.exports = ( ->
         # 検索キーワード
 
         locs    = '122.87,24.84,153.01,46.80'   # in Japan's territorial waters
-        tracks  = '震度'                        # search words
+        locs    = '-180.00,-90.00,180.00,90.00' # all over the world
+        tracks  = 'バルス'                      # any search words
 
         # ストリームの読み込みと保存
 
