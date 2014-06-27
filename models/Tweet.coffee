@@ -3,9 +3,10 @@ mongoose = require 'mongoose'
 Seq = require 'seq'
 util = require 'util'
 
+# detail: https://dev.twitter.com/docs/platform-objects/tweets
 TweetModel = new mongoose.Schema
-  created_at: type: Date # ツイート日時
-  id: type: Number, unique: yes
+  created_at: type: Date, index: yes # ツイート日時
+  id: type: Number, unique: yes, index: yes
   id_str: type: String
   text: type: String
   source: type: String
@@ -17,6 +18,7 @@ TweetModel = new mongoose.Schema
   in_reply_to_screen_name: type: String
   user: type: Object
   coordinates: type: Object
+  point: type: [Number], index: '2d', index: yes # coordinates.coordinates
   contributors: type: Object
   retweet_count: type: Number
   favorite_count: type: Number
@@ -56,8 +58,9 @@ TweetModel.statics.find_or_new = (data) ->
     .seq_((next, tweet) ->
       unless tweet # ツイートがまだ存在しなかったならば
         tweet = new M data
+        tweet.point = data.coordinates?.coordinates
         tweet.registed_at ?= Date.now()
-        tweet.updated_at ?= Date.now()
+        tweet.updated_at = Date.now()
         tweet.save()
 
         console.log ("@#{tweet.user.screen_name}".blue + " #{tweet.user.name}").bold + " #{tweet.text}"
