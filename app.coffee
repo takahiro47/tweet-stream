@@ -88,8 +88,8 @@ app = module.exports = ( ->
         # ストリームの読み込みと保存
 
         twit.stream 'statuses/filter',
-          'locations': locs
           # 'track': tracks
+          'locations': locs
         , (stream) ->
           stream.on 'data', (data) ->
             Tweet.find_or_new data

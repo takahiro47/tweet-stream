@@ -26,7 +26,7 @@ TweetModel = new mongoose.Schema
   favorited: type: Boolean
   retweeted: type: Boolean
   filter_level: type: String
-  lang: type: String
+  lang: type: String, index: yes
   data: type: Object
   registed_at: type: Date # データベース登録日時
   updated_at: type: Date # データベース更新日時
