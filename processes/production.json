@@ -10,7 +10,7 @@
       "node_modules"
   ],
   "instances"   : "1",
-  "watch"       : "true",
+  "watch"       : "false",
   "exec_mode"   : "cluster_mode",
   "env": {
       "NODE_ENV": "production",
